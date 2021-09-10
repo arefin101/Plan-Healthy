@@ -13,28 +13,10 @@
 <body>
 
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">PLAN HEALTHY</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="doctor.php">Doctor's Appointment</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="contactus.php">About Us</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="covid.php">Covid-19</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+<html>
+      @include('layouts.CommonLayout')
+</html>
+
 
 
 <section class="my-5">
@@ -45,7 +27,7 @@
 		<div class="row">
 			<div class="col-lg-4 col-md-4 col-12">
 				<div class="card">
-  <img class="card-img-top" src="image/doctor1.png" alt="Card image">
+  <img class="card-img-top" src="image/doctor2.png" alt="Card image">
   <div class="card-body">
     <h3 class="card-title">Sara Collins</h3>
     <p class="card-text">I founded PlanHealthy because I saw a tremendous need for quality healthcare in Bangladesh. I believe positive, systemic change in Bangladesh's health care sector is as necessary as it is possible.</p>
@@ -56,7 +38,7 @@
 
   <div class="col-lg-4 col-md-4 col-12">
 				<div class="card">
-  <img class="card-img-top" src="image/doctor3.png" alt="Card image">
+  <img class="card-img-top" src="image/doctor1.png" alt="Card image">
   <div class="card-body">
     <h3 class="card-title">Lucia Parker</h3>
     <p class="card-text">I am part of PlanHealthy team because I share its focused vision on quality, and feel passionately about providing quality health care to ensure patient satisfaction.</p>
@@ -67,7 +49,7 @@
 
   <div class="col-lg-4 col-md-4 col-12">
 				<div class="card">
-  <img class="card-img-top" src="image/doctor2.png" alt="Card image">
+  <img class="card-img-top" src="image/doctor3.png" alt="Card image">
   <div class="card-body">
     <h3 class="card-title">Kara Jones</h3>
     <p class="card-text">I am a part of PlanHealthy team because it is a project where my experience, skills, and passion can make an impact to the lives of millions..</p>
@@ -90,11 +72,6 @@
 
 
 		<div class="w-50 m-auto">
-			@if(Session::get('success'))
-                <div class="alert" style="background-color:#E7F0E1; color:green">
-                    {{ Session::get('success') }}
-                </div>
-            @endif
 			<form action="{{ route('appointmented') }}" method="post">
 				@csrf
 				<div class="form-group">
@@ -115,7 +92,7 @@
 				</div>
 				<div class="form-group">
 					<label>DATE</label>
-					<input type="text" name="date" autocomplete="off" class="form-control">
+					<input type="date" name="date" autocomplete="off" class="form-control">
 				</div>
 				<div class="form-group">
 					<label>ADDITIONAL COMMENT</label>
@@ -123,7 +100,7 @@
 						
 					</textarea>
 				</div>
-				<button type="submit" class="btn btn-success">Submit</button>
+				<button type="submit" class="btn btn-success">Make An Appointment</button>
 			        </form>
 			
 

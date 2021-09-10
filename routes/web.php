@@ -15,8 +15,16 @@ use App\Http\Controllers\AppointmentController;
 */
 
 Route::get('/', function () {
-    return redirect()->route('appointment');
-});
+    return view('index');
+})->name('index');
 
 Route::get("appointment", [AppointmentController::class, "appointment"])->name('appointment');
 Route::post("appointment", [AppointmentController::class, "appointmented"])->name('appointmented');
+Route::get("about", [AppointmentController::class, "about"])->name('about');
+Route::get("covid", [AppointmentController::class, "covid"])->name('covid');
+Route::get("profile1", [AppointmentController::class, "profile1"])->name('profile1');
+Route::get("profile2", [AppointmentController::class, "profile2"])->name('profile2');
+Route::get("profile3", [AppointmentController::class, "profile3"])->name('profile3');
+Route::get("login", [AppointmentController::class, "login"])->name('login');
+Route::post("login", [AppointmentController::class, "verify"])->name('loggedin');
+Route::get("logout", [AppointmentController::class, "logout"])->name('logout');
